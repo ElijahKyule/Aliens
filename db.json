@@ -1,0 +1,50 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Elijah Kyule",
+      "email": "elijahkyule36@gmail.com",
+      "gender": "male",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "name": "Austine Mwangi",
+      "email": "austine.mwangi@gmail.com",
+      "gender": "male",
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "name": "Wendy Mbabu",
+      "email": "wendymbabu@gmail.com",
+      "gender": "female",
+      "status": "active"
+    },
+    {
+      "id": 4,
+      "name": "Rose Naomi",
+      "email": "rosenaomi@gmail.com",
+      "gender": "female",
+      "status": "active"
+    },
+    {
+      "id": 5,
+      "name": "Wilson Mwangi",
+      "email": "wilson@gmail.com",
+      "gender": "male",
+      "status": "active"
+    },
+    {
+      "id": 6,
+      "name": "Sheila Chepkemoi",
+      "email": "sheilachekpkemoi@gmail.com",
+      "gender": "female",
+      "status": "active"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

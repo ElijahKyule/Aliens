@@ -1,0 +1,87 @@
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="container text-primary">
+        <div class="row mt-2">
+            <div class="justify-content-center">
+                <button (click)="clickAddAlien()" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Add
+                </button>
+            </div>
+        </div>
+        <div style="overflow:scroll; height:600px;">
+        <table class="table table-responsive table-bordered mt-2  ms-20 mat-table">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of alienData">
+                    <td>{{row.id}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.email}}</td>
+                    <td>{{row.gender}}</td>
+                    <td>{{row.status}}</td>
+                    <td>
+                        <button (click)="onEdit(row)" type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                        <button (click)="deleteAlienData(row)" class="btn btn-danger mx-3">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title text-secondary" id="exampleModalLabel">Add Alien</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formValue">
+                        <div class="mb-3 text-secondary">
+                          <label for="name" class="form-label">Name</label>
+                          <input type="text" class="form-control" formControlName="name" id="firstname">
+                        </div>
+                        <div class="mb-3 text-secondary">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" formControlName="email" id="language">
+                        </div>
+                        <div class="mb-3 text-secondary">
+                            <label for="gender" class="form-label">Gender</label>
+                            <select class="form-select" aria-label="Gender" formControlName="gender">
+                                <option selected>Select..</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Others</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 text-secondary">
+                            <label for="status" class="form-label">Status</label>
+                            <select class="form-select" aria-label="Status" formControlName="status">
+                                <option selected>Select..</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                      </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" *ngIf="showAdd" (click)="postAlienDetails()">Add</button>
+                <button type="button" class="btn btn-primary" *ngIf="showUpdate" (click)="updateAlienDetails()">Update</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+      
+    </div>
+  </section>
+  <!-- End Hero --> 
